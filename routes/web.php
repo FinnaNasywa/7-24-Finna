@@ -13,12 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'Halaman Home';
+Route::get('/', function (){
+    return view('home' , [
+        "title" => "Home"
+    ]);
 });
-Route::get('/About', function () {
-    return 'Halaman About';
+
+Route::get('/about', function (){
+    return view('about', [
+        "title" => "About",
+        "nama" => "Nasywa Nur Shafinna",
+        "email" => "finnanasywa@gmail.com",
+        "gambar" => "kyut.jpg" 
+    ]);
 });
-Route::get('/Gallery', function () {
-    return 'Halaman Gallery';
+
+Route::get('/gallery', function (){
+    return view('gallery' , [
+        "title" => "Gallery"
+    ]);
+});
+Route::get('/contacts', function (){
+    return view('contacts' , [
+        "title" => "Contacts"
+    ]);
 });
