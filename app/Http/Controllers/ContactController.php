@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('contacts', [
+            "title" => "Contacts"
+        ]);
     }
 
     /**
@@ -39,7 +41,7 @@ class ContactController extends Controller
         $contact = Contact::create($request->all());
         $contact->save();
 
-        return redirect('contact');
+        return redirect('contacts');
     }
 
     /**
